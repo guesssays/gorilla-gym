@@ -119,16 +119,16 @@ const ContactsPage = () => {
   ];
 
   const currentLocation = locations.find((loc) => loc.id === selectedLocation) || locations[0];
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  // Обработка формы
+  console.log('Form submitted:', formData);
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Обработка формы
-    console.log('Form submitted:', formData);
-  };
+const handleInputChange = (field: string, value: string) => {
+  setFormData((prev) => ({ ...prev, [field]: value }));
+};
 
-  const handleInputChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
 
   return (
     <div className="min-h-screen bg-black text-white py-8">

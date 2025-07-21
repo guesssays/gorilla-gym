@@ -146,19 +146,21 @@ const BlogPage = () => {
     return matchesCategory && matchesSearch;
   });
 
-  const getCategoryInfo = (categoryId) => {
-    return categories.find(cat => cat.id === categoryId);
-  };
+const getCategoryInfo = (categoryId: string) => {
+  return categories.find(cat => cat.id === categoryId);
+};
 
-  const getCategoryColor = (category) => {
-    switch (category) {
-      case 'workouts': return 'bg-red-500/80';
-      case 'nutrition': return 'bg-green-500/80';
-      case 'health': return 'bg-blue-500/80';
-      case 'motivation': return 'bg-purple-500/80';
-      default: return 'bg-orange-500/80';
-    }
-  };
+
+const getCategoryColor = (category: string) => {
+  switch (category) {
+    case 'workouts': return 'bg-red-500/80';
+    case 'nutrition': return 'bg-green-500/80';
+    case 'health': return 'bg-blue-500/80';
+    case 'motivation': return 'bg-purple-500/80';
+    default: return 'bg-orange-500/80';
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-8 sm:py-12">
